@@ -1,7 +1,7 @@
 var topics = ["The Office", "Stranger Things", "Archer", "Game of Thrones", "Broad City", "Futurama", "Parks and Rec", "Spongebob", "Brooklyn 99", "Bob's Burgers"];
 
 function setButtons() {
-    for (var i = 0; i < topics.length -1; i++) {
+    for (var i = 0; i < topics.length; i++) {
         var newButton = $("<button>").attr("class", "button").attr("data-show", topics[i]).text(topics[i]);
         $(".buttons").append(newButton);
     }
@@ -19,16 +19,18 @@ function displayGif() {
         var results = response.data;
         console.log(results);
         for (var i=0; i < results.length; i++) {
-            var gifDiv = $("<div>");
+            if ((results[i].rating) != "r") {
+            var gifDiv = $("<div class='gif'>");
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
-            var showImage = $("<img>").attr("src", results[i].images.fixed_height_still.url);
+            var showImage = $("<img>").attr("src", results[i].images.fixed_height_still.url).attr("data-still", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-state", "still");
             console.log(results[i].images.fixed_height_still.url);
             gifDiv.prepend(p);
             gifDiv.prepend(showImage);
             $(".resultGifs").prepend(gifDiv);
-        }
-    })
+            };
+        };
+    });
 };
 
 $("#addShow").on("click", function() {
@@ -40,6 +42,18 @@ $("#addShow").on("click", function() {
 });
 
 $(document).on("click", ".button", displayGif);
+
+$(document).on("click", "img", function() {
+    if ($(this).attr("data-state") == "still") {
+        var animateURL = $(this).attr("data-animate");
+        $(this).attr("src", animateURL);
+        $(this).attr("data-state", "animate");
+    } else {
+        var stillURL = $(this).attr("data-still");
+        $(this).attr("src", stillURL);
+        $(this).attr("data-state", "still");
+    }
+});
 
 
 setButtons();

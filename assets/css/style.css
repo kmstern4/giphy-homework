@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Roboto');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/static.png);
+    background-position: center center;
+    font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+    background: black;
+    color: white;
+    margin: 10px 10% 0 10%;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 60px;
+}
+
+#instructions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+button {
+    cursor: pointer;
+    width: 120px;
+    padding: 5px;
+}
+
+button:hover {
+    background:grey;
+    color: white;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#addShow {
+    width: 120px;
+    padding: 5px;
+    border-radius: 0px;
+}
+
+#addShow:hover {
+    cursor: pointer;
+}
+
+.resultGifs {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.gif {
+    display: inline-block;
+    margin: 10px;
+}

@@ -5,20 +5,25 @@
         <title>GifTastic</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
         <link type="text/css" rel="stylesheet" href="assets/css/style.css">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <div class="buttons"></div>
-        <div class="search">
-            <form id="showForm">
-                <label for="showInput">Add a TV Show</label>
-                <input type="text" id="showInput">
-                <input type="submit" id="addShow" value="Add Show">
-            </form>
+        <div class="wrapper">
+            <h1>TV Show Gif Generator</h1>
+            <p id="instructions">Choose a show to get started! Click the image to play the gif!</p>
+            <div class="buttons"></div>
+            <div class="search">
+                <form id="showForm">
+                    <label for="showInput">Add a TV Show</label>
+                    <input type="text" id="showInput">
+                    <input type="submit" id="addShow" value="Add Show">
+                </form>
+            </div>
+            <div class="resultGifs"></div>
         </div>
-        <div class="resultGifs"></div>
 
 
         <script src="assets/javascript/app.js"></script>
